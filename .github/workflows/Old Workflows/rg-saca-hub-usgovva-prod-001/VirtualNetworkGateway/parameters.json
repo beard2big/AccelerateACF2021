@@ -1,0 +1,62 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualNetworkGatewayName": {
+            "value": "vnet-vpn-gw-usgovva-prod"
+        },
+        "gatewayPipName": {
+            "value": [
+                "vnet-vpn-gw-usgovva-prod-pip-01"
+            ]
+        },
+        "cuaId": {
+            "value": "aaaaaaaa-bbbb-cccc-dddddddddddddddd"
+        },            
+        "domainNameLabel": {
+            "value": [
+                "vnet-vpn-gw-usgovva-prod-pip-01"
+            ]
+        },
+        "virtualNetworkGatewayType": {
+            "value": "Vpn"
+        },
+        "virtualNetworkGatewaySku": {
+            "value": "VpnGw1AZ"
+        },
+        "vpnType": {
+            "value": "RouteBased"
+        },
+        "vpnGatewayGeneration": {
+            "value": "Generation2"
+        },
+        "activeActive": {
+            "value": false
+        },
+        "vNetId": {
+            "value": "/subscriptions/c1cb3c9d-1971-4f71-b905-a2db33f46900/resourceGroups/rg-saca-hub-usgovva-prod-001/providers/Microsoft.Network/virtualNetworks/vnet-hub-govva-prod-01"
+        },
+        "diagnosticLogsRetentionInDays": {
+            "value": 365
+        },
+        "diagnosticStorageAccountId": {
+            "value": ""
+        },
+        "workspaceId": {
+            "value": ""
+        },
+        "eventHubAuthorizationRuleId": {
+            "value": ""
+        },
+        "eventHubName": {
+            "value": ""
+        },
+        "lockForDeletion": {
+            "value": false
+        },
+        "tags": {
+            "value": {
+            }
+        }
+    }
+}

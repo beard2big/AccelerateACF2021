@@ -1,0 +1,30 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "peeringName": {
+      "value": "peer-vnet-hub-govaz-dev-01-to-vnet-hub-govva-prod-01"
+    },
+    "localVnetName": {
+      "value": "vnet-hub-govaz-dev-01"
+    },
+    "remoteVirtualNetworkId": {
+      "value": "/subscriptions/c1cb3c9d-1971-4f71-b905-a2db33f46900/resourceGroups/rg-saca-hub-usgovva-prod-001/providers/Microsoft.Network/virtualNetworks/vnet-hub-govva-prod-01"
+    },
+    "allowVirtualNetworkAccess": {
+      "value": true
+    },
+    "allowForwardedTraffic": {
+      "value": true
+    },
+    "allowGatewayTransit": {
+      "value": false
+    },
+    "useRemoteGateways": {
+      "value": false
+    },
+    "cuaId": {
+      "value": "aaaaaaaa-bbbb-cccc-dddddddddddddddd"
+    }
+  }
+}

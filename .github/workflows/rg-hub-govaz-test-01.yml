@@ -1,0 +1,152 @@
+name: rg-hub-govaz-test-01
+
+on:
+  push: 
+    branches: [ NotTrigger ] 
+    paths:
+    - '.github/workflows/rg-hub-govaz-test-01.yml'
+    - '.github/workflows/rg-hub-govaz-test-01/*/*' 
+
+env:
+  resourceGroupName: 'rg-hub-govaz-test-01'
+  location: 'westus2' #eastus2
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v2
+    - name: azlogin
+      uses: ./.github/actions/azlogin
+      with:
+       identity: 'false'
+       environmentName: 'AzureCloud' 
+       subscriptionId: '12a0735d-3012-4cca-8cab-396b3304c45a' #WCB_Services_Azure_Readiness_Program_SubscriptionContainer: 12a0735d-3012-4cca-8cab-396b3304c45a
+       clientId: '' #aac3a4bf-cfbc-466a-7efa-18d514ac9c88 This is the ClientID for 'mi-github-hub-001' uami1:00f96c04-71a3-49ab-aae7-ffd484560242
+       clientSecret: '' #Secret
+       tenantId: '72f988bf-86f1-41af-91ab-2d7cd011db47'
+       
+#    - name: NetworkWatcher
+#      uses: ./.github/actions/azdeploy
+#      with:
+#        resourceGroupName: ${{ env.resourceGroupName }}
+#        location: ${{ env.location }}
+#        templateFile: 'Modules/ARM/NetworkWatcher/2019-11-28/deploy.json'
+#        parametersFile: './.github/workflows/${{ env.resourceGroupName }}/NetworkWatcher/parameters.json'
+
+#    - name: DDoSProtectionPlan
+#      uses: ./.github/actions/azdeploy
+#      with:
+#        resourceGroupName: ${{ env.resourceGroupName }} 
+#        location: ${{ env.location }}
+#        templateFile: 'Modules/ARM/DdosProtectionPlans/2019-11-28/deploy.json'
+#        parametersFile: './.github/workflows/${{ env.resourceGroupName }}/DDoSProtection/parameters.json'
+#        resourceGroupCommand: 'create'       
+
+#    - name: NetworkSecurityGroups
+#      uses: ./.github/actions/azdeploy
+#      with:
+#        resourceGroupName: ${{ env.resourceGroupName }}
+#        location: ${{ env.location }}
+#        templateFile: 'Modules/ARM/NetworkSecurityGroups/2019-11-28/deploy.json'
+#        parametersFile: './.github/workflows/${{ env.resourceGroupName }}/NetworkSecurityGroups/parameters.json'
+
+#    - name: RouteTables
+#      uses: ./.github/actions/azdeploy 
+#      with:
+#        resourceGroupName: ${{ env.resourceGroupName }}
+#        location: ${{ env.location }}
+#        templateFile: 'Modules/ARM/RouteTables/2020-03-03/deploy.json'
+#        parametersFile: './.github/workflows/${{ env.resourceGroupName }}/RouteTables/parameters.json' 
+#        resourceGroupCommand: 'create'
+
+#    - name: 'PublicIpPrefixes'
+#      uses: ./.github/actions/azdeploy
+#      with:
+#        resourceGroupName: ${{ env.resourceGroupName }} 
+#        location: ${{ env.location }}
+#        templateFile: 'Modules/ARM/PublicIpPrefixes/2019-11-28/deploy.json'
+#        parametersFile: './.github/workflows/${{ env.resourceGroupName }}/PublicIpPrefixes/parameters.json'    
+
+#    - name: VirtualNetwork
+#      uses: ./.github/actions/azdeploy 
+#      with:
+#        resourceGroupName: ${{ env.resourceGroupName }}
+#        location: ${{ env.location }}
+#        templateFile: 'Modules/ARM/VirtualNetwork/deploy.json'
+#        parametersFile: './.github/workflows/${{ env.resourceGroupName }}/VirtualNetwork/parameters.json'
+#        resourceGroupCommand: 'create'
+
+#   - name: AzureFirewall
+#     uses: ./.github/actions/azdeploy
+#     with:
+#       resourceGroupName: ${{ env.resourceGroupName }}
+#       location: ${{ env.location }}
+#       templateFile: 'Modules/ARM/AzureFirewall/2019-11-28/deploy.json'
+#       parametersFile: './.github/workflows/${{ env.resourceGroupName }}/AzureFirewall/parameters.json'
+
+#    - name: VirtualNetworkGateway
+#      uses: ./.github/actions/azdeploy
+#      with:
+#        resourceGroupName: ${{ env.resourceGroupName }}
+#        location: ${{ env.location }}
+#        templateFile: 'Modules/ARM/VirtualNetworkGateway/deploy.json'
+#        parametersFile: './.github/workflows/${{ env.resourceGroupName }}/VirtualNetworkGateway/parameters.json'
+
+#    - name: KeyVault
+#      uses: ./.github/actions/azdeploy
+#      with:
+#        resourceGroupName: ${{ env.resourceGroupName }}
+#        location: '${{ env.location }}'
+#        templateFile: 'Modules/ARM/KeyVault/deploy.json'
+#        parametersFile: './.github/workflows/${{ env.resourceGroupName }}/KeyVault/parameters.json'
+
+#    - name: StorageAccounts
+#      uses: ./.github/actions/azdeploy
+#      with:
+#        resourceGroupName: ${{ env.resourceGroupName }}
+#        location: ${{ env.location }}
+#        templateFile: 'Modules/ARM/StorageAccounts/deploy.json'
+##        parametersFile: './.github/workflows/${{ env.resourceGroupName }}/StorageAccounts/parameters.json'
+
+#    - name: LogAnalytics
+#      uses: ./.github/actions/azdeploy
+#      with:
+#        resourceGroupName: ${{ env.resourceGroupName }}
+#        location: ${{ env.location }}
+#        templateFile: 'Modules/ARM/LogAnalytics/deploy.json'
+#        parametersFile: './.github/workflows/${{ env.resourceGroupName }}/LogAnalytics/parameters.json'
+
+#    - name: AzureVirtualWAN
+#      uses: ./.github/actions/azdeploy
+#      with:
+#      resourceGroupName: ${{ env.resourceGroupName }} 
+#         location: ${{ env.location }}
+#         templateFile: 'Modules/ARM/VirtualWan/2020-03-30/deploy.json'
+#         parametersFile: './.github/workflows/${{ env.resourceGroupName }}/AzureVirtualWAN/parameters.json'
+#         resourceGroupCommand: 'create'
+
+#    - name: 'VirtualNetworkPeering: vnet-peer-hub-govaz-001-to-csedevtest-govaz-001'
+#      uses: ./.github/actions/azdeploy
+#      with:
+#        resourceGroupName: ${{ env.resourceGroupName }}
+#        location: ${{ env.location }}
+#        templateFile: 'Modules/ARM/VirtualNetworkPeering/deploy.json'
+#        parametersFile: './.github/workflows/${{ env.resourceGroupName }}/VirtualNetworkPeering/Parameters/vnet-hub-govaz-dev-01-to-vnet-hub-govva-prod-01.json'
+
+#    - name: RecoveryServicesVaults
+#      uses: ./.github/actions/azdeploy
+#      with:
+#        resourceGroupName: ${{ env.resourceGroupName }}
+#        location: ${{ env.location }}
+#        templateFile: 'Modules/ARM/RecoveryServicesVaults/deploy.json'
+#        parametersFile: './.github/workflows/${{ env.resourceGroupName }}/RecoveryServicesVaults/parameters.json'
+#        resourceGroupCommand: 'create'
+
+#    - name: AzureBastion
+#      uses: ./.github/actions/azdeploy
+#      with:
+#        resourceGroupName: ${{ env.resourceGroupName }}
+#        location: ${{ env.location }}
+#        templateFile: 'Modules/ARM/AzureBastion/deploy.json'
+#        parametersFile: './.github/workflows/${{ env.resourceGroupName }}/AzureBastion/parameters.json'

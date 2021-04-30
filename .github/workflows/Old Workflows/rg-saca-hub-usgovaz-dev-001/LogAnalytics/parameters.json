@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": { 
+		"logAnalyticsWorkspaceName": {
+			"value": "law-hub-usgovaz-dev-01"
+		},
+		"cuaId": {
+		  "value": "aaaaaaaa-bbbb-cccc-dddddddddddddddd"
+		},
+		"diagnosticStorageAccountId": {
+			"value": "/subscriptions/c1cb3c9d-1971-4f71-b905-a2db33f46900/resourceGroups/rg-saca-hub-usgovaz-dev-001/providers/Microsoft.Storage/storageAccounts/sahubusgovazdev001"
+		}
+	}
+}

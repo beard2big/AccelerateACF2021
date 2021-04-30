@@ -1,0 +1,51 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vnetName": {
+            "value": "vnet-hub-dev-01"
+        },
+        "vnetAddressPrefixes": {
+            "value": ["140.17.248.0/23"]
+        },
+        "subnets": {
+            "value": [{
+                    "name": "GatewaySubnet",
+                    "addressPrefix": "140.17.249.48/29"
+                },
+                {
+                    "name": "Firewall",
+                    "addressPrefix": "140.17.249.0/28",
+                    "networkSecurityGroupName": "",
+                    "routeTableName": "",
+                    "serviceEndpoints": [],
+                    "delegations": []
+                },
+                {
+                    "name": "ADDS",
+                    "addressPrefix": "140.17.249.16/28",
+                    "networkSecurityGroupName": "",
+                    "routeTableName": "",
+                    "serviceEndpoints": [],
+                    "delegations": []
+                },
+                {
+                    "name": "SelfHostedRunner",
+                    "addressPrefix": "140.17.249.32/28",
+                    "networkSecurityGroupName": "",
+                    "routeTableName": "",
+                    "serviceEndpoints": [],
+                    "delegations": []
+                },
+                {
+                    "name": "AzureBastionSubnet",
+                    "addressPrefix": "140.17.249.96/27",
+                    "networkSecurityGroupName": "",
+                    "routeTableName": "",
+                    "serviceEndpoints": [],
+                    "delegations": []
+                }
+            ]
+        }
+    }
+}

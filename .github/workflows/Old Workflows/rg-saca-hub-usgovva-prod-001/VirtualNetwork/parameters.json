@@ -1,0 +1,54 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vnetName": {
+      "value": "vnet-hub-govva-prod-01"
+    },
+    "vnetAddressPrefixes": {
+      "value": ["140.17.240.0/23"]
+    },
+    "cuaId": {
+      "value": "aaaaaaaa-bbbb-cccc-dddddddddddddddd"
+    },
+    "subnets": {
+      "value": [
+        {
+          "name": "snet-Firewall-prod-01",
+          "addressPrefix": "140.17.241.0/28",
+          "networkSecurityGroupName": "",
+          "routeTableName": "",
+          "serviceEndpoints": []
+        },         
+        {
+          "name": "snet-ADDS-prod-01",
+          "addressPrefix": "140.17.241.16/28",
+          "networkSecurityGroupName": "",
+          "routeTableName": "",
+          "serviceEndpoints": []
+        },
+        {
+          "name": "snet-F5Connection-prod-01",
+          "addressPrefix": "140.17.241.32/28",
+          "networkSecurityGroupName": "",
+          "routeTableName": "",
+          "serviceEndpoints": []
+        },
+        {
+          "name": "GatewaySubnet",
+          "addressPrefix": "140.17.240.0/27",
+          "networkSecurityGroupName": "",
+          "routeTableName": "",
+          "serviceEndpoints": []
+        },
+        {
+          "name": "AzureBastionSubnet",
+          "addressPrefix": "140.17.241.64/27",
+          "networkSecurityGroupName": "",
+          "routeTableName": "",
+          "serviceEndpoints": []
+        }
+      ]
+    }
+  }
+}
