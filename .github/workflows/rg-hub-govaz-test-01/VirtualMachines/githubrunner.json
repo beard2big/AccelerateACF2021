@@ -3,13 +3,13 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "vmNames": {
-      "value": ["vmhubgithubrunner001"]
+      "value": ["vmgithubrunner01"]
     },
     "standardImage": {
       "value": {
-        "publisher": "Canonical",
-        "offer": "UbuntuServer",
-        "sku": "18.04-LTS",
+        "publisher": "RedHat",
+        "offer": "RHEL",
+        "sku": "7.8",
         "version": "latest"
       }
     },
