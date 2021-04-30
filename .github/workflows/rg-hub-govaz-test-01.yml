@@ -25,13 +25,25 @@ jobs:
        clientId: '' #aac3a4bf-cfbc-466a-7efa-18d514ac9c88 This is the ClientID for 'mi-github-hub-001' uami1:00f96c04-71a3-49ab-aae7-ffd484560242
        clientSecret: '' #Secret
        tenantId: '72f988bf-86f1-41af-91ab-2d7cd011db47'
-       
+
+# # # # # # # # # # # # # # # # # # # #
+# DEPLOYABLE RESOURCES
+# # # # # # # # # # # # # # # # # # # #
+
+#    - name: 'VirtualMachines: GitHub Runner'
+#      uses: ./.github/actions/azdeploy
+#      with:
+#        resourceGroupName: ${{ env.resourceGroupName }}
+#        location: ${{ env.location }}
+#        templateFile: 'Modules/ARM/VirtualMachines/deploy.json'
+#        parametersFile: './.github/workflows/${{ env.resourceGroupName }}/VirtualMachines/githubrunner.json'
+
 #    - name: NetworkWatcher
 #      uses: ./.github/actions/azdeploy
 #      with:
 #        resourceGroupName: ${{ env.resourceGroupName }}
 #        location: ${{ env.location }}
-#        templateFile: 'Modules/ARM/NetworkWatcher/2019-11-28/deploy.json'
+#        templateFile: 'Modules/ARM/NetworkWatcher/deploy.json'
 #        parametersFile: './.github/workflows/${{ env.resourceGroupName }}/NetworkWatcher/parameters.json'
 
 #    - name: DDoSProtectionPlan
@@ -39,7 +51,7 @@ jobs:
 #      with:
 #        resourceGroupName: ${{ env.resourceGroupName }} 
 #        location: ${{ env.location }}
-#        templateFile: 'Modules/ARM/DdosProtectionPlans/2019-11-28/deploy.json'
+#        templateFile: 'Modules/ARM/DdosProtectionPlans/deploy.json'
 #        parametersFile: './.github/workflows/${{ env.resourceGroupName }}/DDoSProtection/parameters.json'
 #        resourceGroupCommand: 'create'       
 
@@ -48,7 +60,7 @@ jobs:
 #      with:
 #        resourceGroupName: ${{ env.resourceGroupName }}
 #        location: ${{ env.location }}
-#        templateFile: 'Modules/ARM/NetworkSecurityGroups/2019-11-28/deploy.json'
+#        templateFile: 'Modules/ARM/NetworkSecurityGroups/deploy.json'
 #        parametersFile: './.github/workflows/${{ env.resourceGroupName }}/NetworkSecurityGroups/parameters.json'
 
 #    - name: RouteTables
@@ -56,7 +68,7 @@ jobs:
 #      with:
 #        resourceGroupName: ${{ env.resourceGroupName }}
 #        location: ${{ env.location }}
-#        templateFile: 'Modules/ARM/RouteTables/2020-03-03/deploy.json'
+#        templateFile: 'Modules/ARM/RouteTables/deploy.json'
 #        parametersFile: './.github/workflows/${{ env.resourceGroupName }}/RouteTables/parameters.json' 
 #        resourceGroupCommand: 'create'
 
@@ -65,7 +77,7 @@ jobs:
 #      with:
 #        resourceGroupName: ${{ env.resourceGroupName }} 
 #        location: ${{ env.location }}
-#        templateFile: 'Modules/ARM/PublicIpPrefixes/2019-11-28/deploy.json'
+#        templateFile: 'Modules/ARM/PublicIpPrefixes/deploy.json'
 #        parametersFile: './.github/workflows/${{ env.resourceGroupName }}/PublicIpPrefixes/parameters.json'    
 
 #    - name: VirtualNetwork
@@ -82,7 +94,7 @@ jobs:
 #     with:
 #       resourceGroupName: ${{ env.resourceGroupName }}
 #       location: ${{ env.location }}
-#       templateFile: 'Modules/ARM/AzureFirewall/2019-11-28/deploy.json'
+#       templateFile: 'Modules/ARM/AzureFirewall/deploy.json'
 #       parametersFile: './.github/workflows/${{ env.resourceGroupName }}/AzureFirewall/parameters.json'
 
 #    - name: VirtualNetworkGateway
@@ -122,7 +134,7 @@ jobs:
 #      with:
 #      resourceGroupName: ${{ env.resourceGroupName }} 
 #         location: ${{ env.location }}
-#         templateFile: 'Modules/ARM/VirtualWan/2020-03-30/deploy.json'
+#         templateFile: 'Modules/ARM/VirtualWan/deploy.json'
 #         parametersFile: './.github/workflows/${{ env.resourceGroupName }}/AzureVirtualWAN/parameters.json'
 #         resourceGroupCommand: 'create'
 
